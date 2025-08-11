@@ -27,17 +27,6 @@ body {
   overflow-x: hidden; /* Empêche tout débordement horizontal */
 }
 
-body, html {
-  width: 100vw;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-#background-container {
-  width: 100vw;
-  max-width: 100vw;
-}
-
 body, h1, h2, #name, nav {
   position: relative;
 }
@@ -515,6 +504,9 @@ nav {
 }
 
 .slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -527,7 +519,9 @@ nav {
 }
 
 .item {
-  position: absolute;
+  position: relative; /* plus de absolute */
+  left: unset;
+  top: unset;
   width: 350px;
   height: 250px;
   text-align: justify;
@@ -535,8 +529,6 @@ nav {
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
-  left: 38%;
-  top: 10%;
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -767,14 +759,5 @@ nav {
   overflow: hidden;
   width: 100vw; /* Force la largeur à la taille de la fenêtre */
   left: 0;
-}
-
-body, html {
-  min-width: 1200px;
-  box-sizing: border-box;
-}
-#background-container, .timeline, .slider {
-  min-width: 1200px;
-  box-sizing: border-box;
 }
 
