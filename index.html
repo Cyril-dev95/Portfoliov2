@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Bruno+Ace+SC&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Ajout Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <div id="background-container">
+        <div id="top-background">
+          <nav>
+            <div id="mySidenav" class="sidenav">
+              <a id="closeBtn" href="#" class="close">x</a>
+              <ul>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects-title">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <a href="#" id="openBtn">
+              <span class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </a>
+            <a href="#">
+              <img id="logo_pc" src="img\Logo.png" alt="logo PC" />
+            </a>
+          </nav>
+          <div id="foglayer_01" class="fog">
+            <div class="image01"></div>
+            <div class="image02"></div>
+          </div>
+          <div id="foglayer_02" class="fog">
+            <div class="image01"></div>
+            <div class="image02"></div>
+          </div>
+          <div id="foglayer_03" class="fog">
+            <div class="image01"></div>
+            <div class="image02"></div>
+          </div>
+          <div id="name_job">
+            <h1 id="name">
+              <span>C</span><span>y</span><span>r</span><span>i</span
+              ><span>l</span> <span>P</span><span>a</span><span>r</span
+              ><span>c</span><span>h</span><span>e</span><span>t</span>
+            </h1>
+            <h2 id="job">
+              <span>-</span> <span>D</span><span>é</span><span>v</span
+              ><span>e</span><span>l</span><span>o</span><span>p</span
+              ><span>p</span><span>e</span><span>u</span><span>r</span>
+              <span>W</span><span>e</span><span>b</span> <span>-</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="scrolling-text">
+      <ul>
+        <li>
+          <span class="name_job">Cyril Parchet</span>
+        </li>
+        <li>
+          <span class="separation">•</span>
+        </li>
+        <li>
+          <span class="name_job">Développeur Web</span>
+        </li>
+        <li>
+          <span class="separation">•</span>
+        </li>
+      </ul>
+
+      <ul aria-hidden="true">
+        <li>
+          <span class="name_job">Cyril Parchet</span>
+        </li>
+        <li>
+          <span class="separation">•</span>
+        </li>
+        <li>
+          <span class="name_job">Développeur Web</span>
+        </li>
+        <li>
+          <span class="separation">•</span>
+        </li>
+      </ul>
+    </div>
+
+    <main>
+      <section id="bio">
+        <p>
+          Je m'appelle <span class="text-color">Cyril Parchet</span> et je suis
+          actuellement en <span class="text-color">reconversion professionnelle</span> 
+          dans le <span class="text-color">développement web</span>, après une année de formation intensive.
+        </p>
+        <p>
+          Doté d'un <span class="text-color">esprit logique</span> et d'une
+          grande <span class="text-color">curiosité</span>, je vise à intégrer
+          un poste de <span class="text-color">développeur front-end</span> pour
+          continuer à
+          <span class="text-color">développer mes compétences techniques</span>.
+        </p>
+        <p>
+          Cette ambition s'aligne parfaitement avec ma
+          <span class="text-color"
+            >passion pour les nouvelles technologies, les jeux vidéo et le
+            sport</span
+          >.
+        </p>
+        <p>
+          Je suis <span class="text-color">ouvert</span> à toutes les
+          opportunités qui me permettront de mettre en
+          <span class="text-color">pratique mes connaissances</span> et d'<span
+            class="text-color"
+            >apporter ma contribution</span
+          >
+          à des <span class="text-color">projets stimulants</span>.
+        </p>
+      </section>
+
+      <hr class="separator" />
+
+      <section id="skills">
+        <h2 id="skills-title">Mes Compétences</h2>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          <div class="timeline-container left-container">
+            <img src="img/HMTL.jpg" alt="logo HTML" />
+            <div class="textbox">
+              <h4>HTML</h4>
+              <span class="left-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container right-container">
+            <img src="img/CSS.jpg" alt="logo CSS" />
+            <div class="textbox">
+              <h4>CSS</h4>
+              <span class="right-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container left-container">
+            <img src="img/JS.jpg" alt="logo Javascript" />
+            <div class="textbox">
+              <h4>Javascript</h4>
+              <span class="left-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container right-container">
+            <img src="img/SQL.jpg" alt="logo SQL" />
+            <div class="textbox">
+              <h4>SQL</h4>
+              <span class="right-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container left-container">
+            <img src="img/PHP.jpg" alt="logo PHP" />
+            <div class="textbox">
+              <h4>PHP</h4>
+              <span class="left-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container right-container">
+            <img src="img/NOSQL.jpg" alt="logo NoSQL" />
+            <div class="textbox">
+              <h4>NoSQL</h4>
+              <span class="right-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container left-container">
+            <img src="img/SYMFONY.jpg" alt="logo Symfony" />
+            <div class="textbox">
+              <h4>Symfony</h4>
+              <span class="left-container-arrow"></span>
+            </div>
+          </div>
+          
+          <div class="timeline-container right-container">
+            <img src="img/FIGMA.jpg" alt="logo NoSQL" />
+            <div class="textbox">
+              <h4>Figma</h4>
+              <span class="right-container-arrow"></span>
+            </div>
+          </div>
+
+          <div class="timeline-container left-container">
+            <img src="img/CANVA.jpg" alt="logo NoSQL" />
+            <div class="textbox">
+              <h4>Canva</h4>
+              <span class="left-container-arrow"></span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="separator" />
+
+      <h2 id="projects-title">Mes Projets & Design</h2>
+
+      <section class="slider">
+        <div class="item projet1">
+          <p>1ère version de mon portfolio réalisé avec HTML, CSS et JavaScript au cours de ma formation.</p>
+          <a href="https://cparchet.ma6tvacoder.org" target="_blank" class="voir-plus-btn">Voir plus</a>
+        </div>
+
+        <div class="item projet2">
+          <p>Refonte complète d'un site pour un client réel durant mon stage : création de la maquette validée puis réalisation de la nouvelle version visuelle du site. Développé sous WordPress.</p>
+          <a href="https://fb-services-renovation.fr" target="_blank" class="voir-plus-btn">Voir plus</a>
+        </div>
+
+        <div class="item projet3">
+          <p>Projet collectif réalisé durant ma formation, pour lequel j'ai conçu toute la maquette graphique. Développé sous WordPress.</p>
+          <a href="https://apecap.fr" target="_blank" class="voir-plus-btn">Voir plus</a>
+        </div>
+
+        
+        <button id="next">></button>
+        <button id="prev"><</button>
+      </section>
+
+      <hr class="separator" />
+
+      <section id="contact" class="contact-section">
+        <h2 id="contact-title">Contactez-moi</h2>
+        <p>
+          Une idée, une opportunité ou une question ? Je suis ouvert à toute proposition et échange professionnel.<br>
+          N'hésitez pas à me contacter directement par email ou via LinkedIn !
+        </p>
+        <div class="contact-links">
+          <a href="mailto:parchetcyril@gmail.com" class="contact-btn" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/cyril-parchet/?originalSubdomain=fr" target="_blank" class="contact-btn linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-col left">
+        <a href="#top-background">
+          <img src="img/Logo.png" alt="Logo Cyril Parchet" class="footer-logo" />
+        </a>        
+      </div>
+      <div class="footer-col center">
+        <span class="footer-text">Design par Cyril Parchet</span>
+      </div>
+      <div class="footer-col right">
+        <a href="https://github.com/Cyril-dev95" target="_blank" title="GitHub" class="footer-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/cyril-parchet/?originalSubdomain=fr" target="_blank" title="LinkedIn" class="footer-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:parchetcyril@gmail.com" title="Email" class="footer-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

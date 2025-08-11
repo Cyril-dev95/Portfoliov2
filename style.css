@@ -1,0 +1,761 @@
+@font-face {
+  font-family: 'Blacksword';
+  src: url('fonts/Blacksword.ttf') format('truetype'); /* Chemin vers le fichier de la police */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tangerine';
+  src: url("fonts/Tangerine-Regular.ttf") format('truetype'); /* Chemin relatif vers la police */
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #07afd9;
+}
+
+html {
+  scroll-behavior: smooth; /* Permet le défilement fluide vers les ancres */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
+  overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+
+body, h1, h2, #name, nav {
+  position: relative;
+  /* z-index: 1;  <-- SUPPRIME cette ligne */
+}
+
+body.sidenav-open {
+  position: relative; /* Assure que le body reste stable */
+}
+
+#top-background {
+  width: 100%;
+  height: 48.1vw;
+  background-image: url('img/bg1.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -3; /* Place le background tout au fond */
+}
+
+
+h1 {
+  font-family: 'bruno ace sc';
+  font-size: 5.2vw; /* Taille de la police */
+  color: black; /* Couleur initiale du texte */
+  text-align: center; /* Centre le texte horizontalement */
+  text-shadow: 
+      0.8px 0.8px 0px white, /* Ombre en bas à droite */
+      -0.8px 0.8px 0px white, /* Ombre en bas à gauche */
+      0.8px -0.8px 0px white, /* Ombre en haut à droite */
+      -0.8px -0.8px 0px white; /* Ombre en haut à gauche */;
+  margin-top: 17%;
+}
+
+#name span {
+  display: inline-block; /* Permet de cibler chaque lettre individuellement */
+  color: black; /* Couleur initiale du texte */
+  text-shadow: 
+      1px 1px 0px white, /* Ombre en bas à droite */
+      -1px 1px 0px white, /* Ombre en bas à gauche */
+      1px -1px 0px white, /* Ombre en haut à droite */
+      -1px -1px 0px white; /* Ombre en haut à gauche */;
+  transition: transform 0.5s ease-in-out, text-shadow 0.5s ease-in-out; /* Transition fluide pour l'effet */
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+#name span:hover {
+  transform: scale(1.2); /* Agrandit légèrement la lettre */
+  text-shadow: 
+      1px 1px 5px white, /* Contour initial en bas à droite */
+      -1px 1px 5px white, /* Contour initial en bas à gauche */
+      1px -1px 5px white, /* Contour initial en haut à droite */
+      -1px -1px 5px white, /* Contour initial en haut à gauche */
+      0 0 20px #c5c4c4, /* Lueur néon douce */
+      0 0 40px #c5c4c4, 
+      0 0 60px #c5c4c4; /* Lueur néon intense */
+  transition: transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out; /* Transition plus rapide */
+}
+
+h2 {
+  font-family: 'Blacksword', sans-serif; /* Utilise la police Blacksword */
+  text-align: center;
+  color: white; /* Couleur initiale du texte */
+  font-size: 2.5vw;
+  font-weight: 100;
+  text-shadow: 
+      1px 1px 0px black, /* Ombre en bas à droite */
+      -1px 1px 0px black, /* Ombre en bas à gauche */
+      1px -1px 0px black, /* Ombre en haut à droite */
+      -1px -1px 0px black; /* Ombre en haut à gauche */;
+  margin-top: -3%;
+}
+
+#name_job {
+  text-align: center; /* Centre le texte */
+  z-index: 1; /* Assure que le texte est au-dessus du brouillard */
+}
+
+
+#job span {
+  display: inline-block; /* Permet de cibler chaque lettre individuellement */
+  color: white; /* Couleur initiale du texte */
+  text-shadow: 
+      1px 1px 0px black, /* Ombre en bas à droite */
+      -1px 1px 0px black, /* Ombre en bas à gauche */
+      1px -1px 0px black, /* Ombre en haut à droite */
+      -1px -1px 0px black; /* Ombre en haut à gauche */;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Transition fluide pour l'effet */
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+#job span:hover {
+  transform: scale(1.2); /* Agrandit légèrement la lettre */
+  text-shadow: 
+      1px 1px 10px rgba(0, 0, 0, 1), /* Contour initial en bas à droite */
+      -1px 1px 10px rgba(0, 0, 1), /* Contour initial en bas à gauche */
+      1px -1px 10px rgba(0, 0, 0, 1), /* Contour initial en haut à droite */
+      -1px -1px 10px rgba(0, 0, 0, 1), /* Contour initial en haut à gauche */
+      0 0 20px rgba(0, 0, 0, 1), /* Lueur néon douce */
+      0 0 40px rgba(0, 0, 0, 1), 
+      0 0 60px rgba(0, 0, 0, 1); /* Lueur néon intense */
+}
+
+nav {
+  background-color: transparent;
+  display: flex;
+}
+
+#logo_pc {
+  position: fixed; /* Permet de positionner l'élément indépendamment */
+  right: 2%; /* Place l'élément à 2% du bord droit */
+  width: 4%; /* Conserve la largeur actuelle */
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+  z-index: 1; /* Place l'élément au-dessus des autres */
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 9999 !important; /* Mets un z-index très élevé */
+  top: 0;
+  left: -250px;
+  background-color: #000000da;
+  padding-top: 150px;
+  transition: left 0.5s ease;
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  text-align: center;
+  color: #c5c4c4; /* Couleur initiale du texte */
+  display: block;
+  transition: transform 0.4s ease, text-shadow 0.4s ease, color 0.4s ease; /* Transition plus fluide */
+  font-family: 'bruno ace sc';
+  position: relative; /* Nécessaire pour positionner le pseudo-élément */
+  position: relative;
+  z-index: 2001 !important; /* Force les liens à être interactifs */
+}
+
+.sidenav a:hover {
+  color: #ffffff; /* Change la couleur du texte au survol */
+  text-shadow: 0 0 10px #c5c4c4, 0 0 20px #c5c4c4, 0 0 30px #c5c4c4; /* Effet néon autour du texte */
+}
+
+.sidenav a::after {
+  content: ""; /* Crée un pseudo-élément vide */
+  display: block;
+  width: 8%; /* Largeur de la ligne */
+  height: 2px; /* Épaisseur de la ligne */
+  background-color: #c5c4c4; /* Couleur de la ligne */
+  margin: 15% auto; /* Centre la ligne horizontalement et ajoute un espace de 10px au-dessus */
+  transition: 0.3s; /* Ajoute une transition pour un effet fluide */
+}
+
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.sidenav.active {
+  left: 0;
+}
+
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.sidenav .close::after {
+  display: none; /* Supprime la ligne pour le bouton de fermeture */
+}
+
+#openBtn {
+  margin-left: 1.7%;
+  margin-top: 1%;
+  z-index: 10; /* Assure que le menu burger reste au-dessus des autres éléments */
+  position: fixed;
+}
+
+#closeBtn {
+  font-size: 50px;
+  color: #c5c4c4; /* Couleur initiale du texte */
+  text-decoration: none; /* Supprime le soulignement */
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Transition fluide pour l'effet */
+}
+
+#closeBtn:hover {
+  color: #ffffff; /* Change la couleur du texte au survol */
+  text-shadow: 0 0 10px #c5c4c4, 0 0 20px #c5c4c4, 0 0 30px #c5c4c4; /* Effet néon autour du texte */
+}
+
+.burger-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.burger-icon span {
+  display: block;
+  width: 40px; /* Largeur des barres */
+  height: 6px; /* Épaisseur des barres */
+  background-color: black; /* Couleur des barres */
+  margin: 8px 0; /* Espacement entre les barres */
+  box-shadow: 0 0 20px #c5c4c4, 0 0 40px #c5c4c4, 0 0 60px #c5c4c4; /* Lueur initiale */
+  animation: neonPulse 3s infinite ease-in-out; /* Animation fluide et continue */
+  transition: box-shadow 0.5s ease-in-out; /* Transition fluide */
+}
+
+.burger-icon span:hover {
+  transform: scale(1.3); /* Agrandit légèrement les barres */
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1); /* Transition plus fluide */
+}
+
+.sidenav ul li:last-of-type a::after {
+  display: none; /* Supprime la ligne pour le dernier lien */
+}
+
+.scrolling-text {
+  font-family: 'bruno ace sc';
+  font-size: 2.5vw;
+  overflow: hidden; /* Cache le texte qui déborde */
+  user-select: none; /* Empêche la sélection du texte */
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap); /* Espace entre les éléments */
+  margin-bottom: 5%;
+}
+
+.scrolling-text ul {
+  list-style: none;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap); /* Espace entre les éléments */
+  margin: auto;
+  padding: 2vw 0;
+  animation: scroll 15s linear infinite; /* Animation de défilement fluide */
+}
+
+.scrolling-text li {
+  
+  color: #c5c4c4; /* Couleur initiale du texte */
+}
+
+.scrolling-text .name_job {
+  font-weight: bold; /* Met en gras le texte */
+}
+
+.scrolling-text:hover ul {
+  animation-play-state: paused; /* Met l'animation en pause au survol */
+}
+
+#bio p {
+  font-family: 'Tangerine', sans-serif; /* Utilise la police Blacksword */
+  text-align: center;
+  color: #929292; /* Couleur initiale du texte */
+  font-size: 2.2vw;
+  width: 50%;
+  margin: auto;
+  /* padding-top: 5%; */
+  letter-spacing: 0.02em;
+  line-height: 1.5; /* Définit l'espacement entre les lignes (1.8x la taille de la ligne) */
+  margin-bottom: 3%;
+}
+
+.text-color {
+  color: white;
+  display: inline-block; /* Permet à transform de fonctionner */
+}
+
+.text-color:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'élément */
+  font-weight: bold;
+  text-shadow: 0 0 10px #c5c4c4, 0 0 20px #c5c4c4, 0 0 30px #c5c4c4; /* Effet néon autour du texte */
+  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transition fluide pour l'effet */
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+.separator {
+  border: none; /* Supprime la bordure par défaut */
+  height: 2px; /* Épaisseur de la barre */
+  background-color: #c5c4c4; /* Couleur de la barre */
+  margin: 7% auto; /* Espacement vertical autour de la barre */
+  width: 50%; /* Largeur de la barre */
+}
+
+#skills-title {
+  font-family: 'bruno ace sc';
+  font-size: 3vw; /* Taille de la police */
+}
+
+
+/* Timeline Style */
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 50px auto 100px auto;
+}
+
+.timeline-container {
+  padding: 10px 50px;
+  position: relative;
+  width: 41.7%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+.timeline-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-container:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.timeline-container:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.timeline-container:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.timeline-container:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.timeline-container:nth-child(5) {
+  animation-delay: 4s;
+}
+
+.timeline-container:nth-child(6) {
+  animation-delay: 5s;
+}
+
+.timeline-container:nth-child(7) {
+  animation-delay: 6s;
+}
+
+.timeline-container:nth-child(8) {
+  animation-delay: 7s;
+}
+
+.timeline-container:nth-child(9) {
+  animation-delay: 8s;
+}
+
+.textbox {
+  padding: 10px 30px;
+  background: #fff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 35%;
+}
+
+.textbox h4 {
+  font-weight: 600;
+  font-family: 'bruno ace sc';
+  font-size: 20px;
+  text-align: center;
+}
+
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  right: -15px;
+}
+
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid white;
+  left: -14.8px;
+}
+
+
+.left-container .textbox {
+  margin-left: auto;
+}
+
+.left-container {
+  left: 0;
+}
+
+.right-container {
+  left: 50%;
+}
+
+.timeline-container img {
+  position: absolute;
+  border-radius: 50%;
+  width: 40px;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+}
+
+.right-container img {
+  left: -20px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 0; /* Commence à 0 */
+  background: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  transition: height 0.5s cubic-bezier(.77,0,.18,1);
+}
+
+.timeline-line {
+  position: absolute;
+  width: 6px;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  height: 0;
+  transition: height 0.5s cubic-bezier(.77,0,.18,1);
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+
+
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-100% - 20px)); /* Déplace le texte vers la gauche */
+    }
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px #c5c4c4, 0 0 40px #c5c4c4, 0 0 60px #c5c4c4; /* Lueur normale */
+    }
+    50% {
+        box-shadow: 0 0 10px #c5c4c4, 0 0 20px #c5c4c4, 0 0 30px #c5c4c4; /* Lueur réduite */
+    }
+}
+
+#projects-title {
+  font-family: 'bruno ace sc';
+  font-size: 3vw; /* Taille de la police */
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 370px; /* Hauteur du slider */
+  font-family: monospace;
+}
+
+.slider h5 {
+  font-size: 20px;
+}
+
+.item {
+  position: absolute;
+  width: 350px;
+  height: 250px;
+  text-align: justify;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: 38%;
+  top: 10%;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* Texte en bas */
+  z-index: 1;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.781); /* Overlay noir transparent */
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.item h5,
+.item p,
+.item span {
+  position: relative;
+  z-index: 1;
+}
+
+.item p {
+  margin: 0;
+}
+
+.projet1 {
+  background-image: url('img/portfoliov1.jpg');
+}
+
+.projet2 {
+  background-image: url('img/FB-Services-Rénovation2.png');
+}
+
+.projet3 {
+  background-image: url('img/Apecap2.png');
+}
+
+#next, #prev {
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: xxx-large;
+  font-family: monospace;
+  font-weight: bold;
+  left: 50px;
+}
+
+#next {
+  left: unset;
+  right: 50px;
+}
+
+.item .voir-plus-btn {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: #ffffff;
+  color: #000000;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  z-index: 2;
+  border: 2px solid transparent;
+  transition:
+    opacity 0.35s cubic-bezier(.77,0,.18,1),
+    transform 0.35s cubic-bezier(.77,0,.18,1),
+    background 0.35s cubic-bezier(.77,0,.18,1),
+    color 0.35s cubic-bezier(.77,0,.18,1),
+    border 0.35s cubic-bezier(.77,0,.18,1);
+  display: block;
+}
+
+.item:hover .voir-plus-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.item .voir-plus-btn:hover {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.item p {
+  transition:
+    opacity 0.35s cubic-bezier(.77,0,.18,1),
+    transform 0.35s cubic-bezier(.77,0,.18,1);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.item:hover p {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.contact-section {
+  text-align: center;
+  margin: 60px auto 40px auto;
+}
+
+#contact-title {
+  font-family: 'bruno ace sc';
+  font-size: 3vw; /* Taille de la police */
+}
+
+.contact-section p {
+  font-family: 'bruno ace sc';
+  color: #c5c4c4;
+  font-size: 1.2em;
+  margin-bottom: 28px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2em;
+  border: 2px solid transparent;
+}
+
+.contact-btn:hover,
+.contact-btn.linkedin:hover {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.contact-btn.linkedin {
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+
+.footer {
+  width: 100%;
+  background: #111;
+  color: #c5c4c4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 2vw 18px 2vw; /* Réduit le padding horizontal */
+  font-family: 'bruno ace sc', sans-serif;
+  border-top: 2px solid #222;
+  margin-top: 40px;
+  box-sizing: border-box;
+}
+
+.footer-col {
+  display: flex;
+  align-items: center;
+}
+
+.footer-col.left .footer-logo {
+  width: 55px;
+  height: auto;
+}
+
+.footer-col.center {
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 1.1em;
+  letter-spacing: 0.04em;
+}
+
+.footer-col.right {
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 180px; /* Fixe la largeur max pour éviter le débordement */
+  overflow: hidden;
+}
+
+.footer-icon {
+  color: #c5c4c4;
+  font-size: 1.3em;
+  margin-left: 12px;
+  transition: color 0.3s;
+}
+
+/* @media screen and (max-width: 600px) {
+  .timeline {
+    margin: 50px auto;
+  }
+  
+  .timeline::after {
+    left: 31px;    
+  }
+
+  .timeline-container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+
+  .textbox {
+    font-size: 14px;
+  }
+} */
+
+#background-container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw; /* Force la largeur à la taille de la fenêtre */
+  left: 0;
+}
+
