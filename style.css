@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Blacksword';
-  src: url('fonts/Blacksword.ttf') format('truetype'); /* Chemin vers le fichier de la police */
+  src: url('fonts/Blacksword.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,6 @@ body {
 
 body, h1, h2, #name, nav {
   position: relative;
-  /* z-index: 1;  <-- SUPPRIME cette ligne */
 }
 
 body.sidenav-open {
