@@ -769,3 +769,12 @@ nav {
   left: 0;
 }
 
+body, html {
+  min-width: 1200px;
+  box-sizing: border-box;
+}
+#background-container, .timeline, .slider {
+  min-width: 1200px;
+  box-sizing: border-box;
+}
+
